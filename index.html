@@ -4,82 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de entrenamiento</title>
-	<link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .contenedor-tablas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .contenedor-tablas table {
+            width: 22%;
+            border-collapse: collapse;
+        }
+        .contenedor-tablas th,
+        .contenedor-tablas td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-	<h1>SESIONES DE ENTRENAMIENTO</h1>
-    <table>
-        <tr>
-            <th>Sesión</th>
-            <th>Calentamiento</th>
-            <th>Principal</th>
-        </tr>
-        <tr>
-            <td>FUERZA TAT MN1</td>
-            <td><a href="FUERZA_TAT_MN1_calentamiento.html" title="Calentamiento - FUERZA TAT MN1">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN1_principal.html" title="Principal - FUERZA TAT MN1">🔗</a></td>
-        </tr>
-        <tr>
-            <td>FUERZA TAT MN2</td>
-            <td><a href="FUERZA_TAT_MN2_calentamiento.html" title="Calentamiento - FUERZA TAT MN2">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN2_principal.html" title="Principal - FUERZA TAT MN2">🔗</a></td>
-        </tr>
-        <tr>
-            <td>FUERZA TAT MN3</td>
-            <td><a href="FUERZA_TAT_MN3_calentamiento.html" title="Calentamiento - FUERZA TAT MN3">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN3_principal.html" title="Principal - FUERZA TAT MN3">🔗</a></td>
-        </tr>
-        <tr>
-            <td>FUERZA TAT MN4</td>
-            <td><a href="FUERZA_TAT_MN4_calentamiento.html" title="Calentamiento - FUERZA TAT MN4">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN4_principal.html" title="Principal - FUERZA TAT MN4">🔗</a></td>
-        </tr>
-		<tr>
-            <td>FUERZA TAT MN5</td>
-            <td><a href="FUERZA_TAT_MN5_calentamiento.html" title="Calentamiento - FUERZA TAT MN5">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN5_principal.html" title="Principal - FUERZA TAT MN5">🔗</a></td>
-        </tr>
-        <tr>
-            <td>FUERZA TAT MN6</td>
-            <td><a href="FUERZA_TAT_MN6_calentamiento.html" title="Calentamiento - FUERZA TAT MN6">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN6_principal.html" title="Principal - FUERZA TAT MN6">🔗</a></td>
-        </tr>
-		<tr>
-            <td>FUERZA TAT MN7</td>
-            <td><a href="FUERZA_TAT_MN7_calentamiento.html" title="Calentamiento - FUERZA TAT MN7">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN7_principal.html" title="Principal - FUERZA TAT MN7">🔗</a></td>
-        </tr>
-		<tr>
-            <td>FUERZA TAT MN8</td>
-            <td><a href="FUERZA_TAT_MN8_calentamiento.html" title="Calentamiento - FUERZA TAT MN8">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN8_principal.html" title="Principal - FUERZA TAT MN8">🔗</a></td>
-        </tr>
-		<tr>
-            <td>FUERZA TAT MN9</td>
-            <td><a href="FUERZA_TAT_MN9_calentamiento.html" title="Calentamiento - FUERZA TAT MN9">🔗</a></td>
-            <td><a href="FUERZA_TAT_MN9_principal.html" title="Principal - FUERZA TAT MN9">🔗</a></td>
-        </tr>
-    </table>
-	<h1>OTROS</h1>
-    <table>
-        <tr>
-            <th>Sesión</th>
-            <th>Fort. arco plantar</th>
-            <th>Fortalecimiento pie</th>
-			<th>Movilidad dinámica</th>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td><a href="FORTALECIMIENTO_ARCO_PLANTAR_I.html" title="Fortalecimiento arco plantar I">🔗</a></td>
-            <td><a href="FORTALECIMIENTO_PIE_I.html" title="Fortalecimiento pie I">🔗</a></td>
-			<td><a href="MOVILIDAD_DINÁMICA_I.html" title="Movilidad dinámica I">🔗</a></td>
-        </tr>
-		<tr>
-            <td>II</td>
-            <td><a href="FORTALECIMIENTO_ARCO_PLANTAR_II.html" title="Fortalecimiento arco plantar II">🔗</a></td>
-            <td><a href="FORTALECIMIENTO_PIE_II.html" title="Fortalecimiento pie II">🔗</a></td>
-			<td><a href="MOVILIDAD_DINÁMICA_II.html" title="Movilidad dinámica II">🔗</a></td>
-        </tr>
-    </table>
+    <h1>SESIONES DE ENTRENAMIENTO</h1>
+    <div class="contenedor-tablas" id="contenedor-tablas">
+        <!-- Las tablas se generarán automáticamente con JavaScript -->
+    </div>
+
+
+    <script>
+        const generarTabla = (inicio, fin) => {
+            let tabla = '<table><tr><th>Sesión</th><th>Calentam.</th><th>Principal</th></tr>';
+            for (let i = inicio; i <= fin; i++) {
+                tabla += `<tr>
+                    <td>FUERZA TAT MN${i}</td>
+                    <td><a href="FUERZA_TAT_MN${i}_calentamiento.html">🔗</a></td>
+                    <td><a href="FUERZA_TAT_MN${i}_principal.html">🔗</a></td>
+                </tr>`;
+            }
+            tabla += '</table>';
+            return tabla;
+        };
+
+        const contenedor = document.getElementById('contenedor-tablas');
+        contenedor.innerHTML += generarTabla(1, 12);
+        contenedor.innerHTML += generarTabla(13, 24);
+        contenedor.innerHTML += generarTabla(25, 36);
+        contenedor.innerHTML += generarTabla(37, 48);
+    </script>
 </body>
 </html>
