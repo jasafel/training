@@ -47,7 +47,6 @@ h1 {
     font-size: 1em;
     margin-bottom: 5px;
     text-align: center;
-
 }
 .video-container iframe {
     width: 100%;
@@ -57,7 +56,9 @@ h1 {
 
 .contenedor-tablas {
 	display: flex;
+	flex-wrap: wrap; 
 	gap: 20px;
+	justify-content: center;
 }
 table {
 	border-collapse: collapse;
