@@ -1,54 +1,77 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de entrenamiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
-    <style>
-        .contenedor-tablas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .contenedor-tablas table {
-            width: 28%;
-            border-collapse: collapse;
-        }
-        .contenedor-tablas th,
-        .contenedor-tablas td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <h1>SESIONES DE ENTRENAMIENTO</h1>
-    <div class="contenedor-tablas" id="contenedor-tablas">
-        <!-- Las tablas se generarán automáticamente con JavaScript -->
-    </div>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="index.html">Entrenamiento</a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="index.html" class="is-active">Fuerza</a>
+                <a href="index-otros.html">Otros</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="main">
+        <div class="page-header">
+            <h1>Sesiones de entrenamiento</h1>
+            <p class="page-subtitle">Acceso rápido a las sesiones de fuerza TAT</p>
+        </div>
+
+        <div class="cards-grid" id="contenedor-tablas"></div>
+    </main>
 
     <script>
-        const generarTabla = (inicio, fin) => {
-            let tabla = '<table><tr><th>Sesión</th><th>Calentam.</th><th>Principal</th></tr>';
-            for (let i = inicio; i <= fin; i++) {
-                tabla += `<tr>
-                    <td>FUERZA TAT MN${i}</td>
-                    <td><a href="FUERZA_TAT_MN${i}_calentamiento.html">🔗</a></td>
-                    <td><a href="FUERZA_TAT_MN${i}_principal.html">🔗</a></td>
-                </tr>`;
+        const bloques = [
+            { inicio: 1, fin: 12 },
+            { inicio: 13, fin: 24 },
+            { inicio: 25, fin: 36 }
+        ];
+
+        const crearEnlace = (href, texto = '🔗') => {
+            if (!href) {
+                return '<span class="table-link table-link--empty">—</span>';
             }
-            tabla += '</table>';
-            return tabla;
+            return `<a class="table-link" href="${href}" aria-label="Abrir ${href}">${texto}</a>`;
+        };
+
+        const generarTabla = (inicio, fin) => {
+            let filas = '';
+            for (let i = inicio; i <= fin; i++) {
+                filas += `
+                    <tr>
+                        <td>FUERZA TAT MN${i}</td>
+                        <td>${crearEnlace(`FUERZA_TAT_MN${i}_calentamiento.html`)}</td>
+                        <td>${crearEnlace(`FUERZA_TAT_MN${i}_principal.html`)}</td>
+                    </tr>`;
+            }
+
+            return `
+                <section class="session-card">
+                    <h2>Sesiones ${inicio}–${fin}</h2>
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sesión</th>
+                                    <th>Calentam.</th>
+                                    <th>Principal</th>
+                                </tr>
+                            </thead>
+                            <tbody>${filas}</tbody>
+                        </table>
+                    </div>
+                </section>`;
         };
 
         const contenedor = document.getElementById('contenedor-tablas');
-        contenedor.innerHTML += generarTabla(1, 12);
-        contenedor.innerHTML += generarTabla(13, 24);
-        contenedor.innerHTML += generarTabla(25, 36);
+        contenedor.innerHTML = bloques.map(({ inicio, fin }) => generarTabla(inicio, fin)).join('');
     </script>
 </body>
 </html>

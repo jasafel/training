@@ -1,47 +1,69 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesiones de entrenamiento</title>
+    <title>Otras sesiones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="index.html">Entrenamiento</a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="index.html">Fuerza</a>
+                <a href="index-otros.html" class="is-active">Otros</a>
+            </nav>
+        </div>
+    </header>
 
-<h1>OTROS</h1>
-<table class="tabla-otros">
-    <tr>
-        <th>Sesión</th>
-        <th>1</th>
-        <th>2</th>
-		<th>3</th>
-    </tr>
-    <tr>
-        <th>Fort. arco plantar</th>
-        <td><a href="FORTALECIMIENTO_ARCO_PLANTAR_I.html">🔗</a></td>
-        <td><a href="FORTALECIMIENTO_ARCO_PLANTAR_II.html">🔗</a></td>
-		<td><a href=""></a></td>
-    </tr>
-    <tr>
-        <th>Fortal. pie</th>
-        <td><a href="FORTALECIMIENTO_PIE_I.html">🔗</a></td>
-        <td><a href=""></a></td>
-		<td><a href=""></a></td>
-    </tr>
-    <tr>
-        <th>Movilidad dinámica</th>
-        <td><a href=""></a></td>
-        <td><a href="MOVILIDAD_DINÁMICA_II.html">🔗</a></td>
-		<td><a href="MOVILIDAD_DINÁMICA_III.html">🔗</a></td>
-    </tr>
-    <tr>
-        <th>Core</th>
-        <td><a href="CORE_TAT_I.html">🔗</a></td>
-        <td><a href=""></a></td>
-		<td><a href=""></a></td>
-    </tr>
-</table>
+    <main class="main">
+        <div class="page-header">
+            <h1>Otros bloques</h1>
+            <p class="page-subtitle">Movilidad, core y fortalecimiento específico</p>
+        </div>
 
- 
+        <section class="session-card">
+            <div class="table-scroll">
+                <table class="tabla-otros">
+                    <thead>
+                        <tr>
+                            <th>Sesión</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Fort. arco plantar</th>
+                            <td><a class="table-link" href="FORTALECIMIENTO_ARCO_PLANTAR_I.html">🔗</a></td>
+                            <td><a class="table-link" href="FORTALECIMIENTO_ARCO_PLANTAR_II.html">🔗</a></td>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                        </tr>
+                        <tr>
+                            <th>Fortal. pie</th>
+                            <td><a class="table-link" href="FORTALECIMIENTO_PIE_I.html">🔗</a></td>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                        </tr>
+                        <tr>
+                            <th>Movilidad dinámica</th>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                            <td><a class="table-link" href="MOVILIDAD_DINÁMICA_II.html">🔗</a></td>
+                            <td><a class="table-link" href="MOVILIDAD_DINÁMICA_III.html">🔗</a></td>
+                        </tr>
+                        <tr>
+                            <th>Core</th>
+                            <td><a class="table-link" href="CORE_TAT_I.html">🔗</a></td>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                            <td><span class="table-link table-link--empty">—</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
